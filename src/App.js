@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import JSON from './SCPunits.json';
+
+const scpwiki = JSON.map(
+
+  (scp) => {
+    return(
+      <div className="card card-body border-light border border-5 bg-dark">
+
+        <h3 className="card-header bg-secondary text-light">{scp.item}</h3>
+        
+        <h4 className="card-title text-light">{scp.objectclass}</h4>
+        <p className="card-title"><img src={scp.image} alt=""></img></p>
+
+        <h5 className="card-title text-light">Description</h5>
+        <p className="card-text text-light">{scp.description}</p>
+
+        <h5 className="card-title text-light">Procedures</h5>
+        <p className="card-text text-light">{scp.procedures}</p>
+        
+      </div>
+      
+    );
+  }
+
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {scpwiki}
     </div>
   );
 }
