@@ -1,4 +1,5 @@
 import JSON from './SCPunits.json';
+import React, { Component }  from 'react';
 
 const scpwiki = JSON.map(
 
